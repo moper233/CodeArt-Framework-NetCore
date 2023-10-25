@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeArt.DomainDriven.Extens
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeArt.RabbitMQ", "CodeArt.RabbitMQ\CodeArt.RabbitMQ.csproj", "{5F875EC3-CC4E-4A6E-996F-AC52D3DC9BFA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServiceModel", "ServiceModel", "{128C3CB4-5D2C-4977-AEC2-17E51B26BB56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeArt.ServiceModel", "CodeArt.ServiceModel\CodeArt.ServiceModel.csproj", "{1BC55AA7-519D-45BC-B100-B3D9258E1123}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,10 @@ Global
 		{5F875EC3-CC4E-4A6E-996F-AC52D3DC9BFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F875EC3-CC4E-4A6E-996F-AC52D3DC9BFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F875EC3-CC4E-4A6E-996F-AC52D3DC9BFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BC55AA7-519D-45BC-B100-B3D9258E1123}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BC55AA7-519D-45BC-B100-B3D9258E1123}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BC55AA7-519D-45BC-B100-B3D9258E1123}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BC55AA7-519D-45BC-B100-B3D9258E1123}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +70,7 @@ Global
 		{D3889D8D-675C-4DE9-8360-7A57A5A7018A} = {CC6DBD75-2E39-4869-9803-A37042D8A8C7}
 		{F79D95A2-C06A-4EAB-8A94-A4A37CE7C8CE} = {CC6DBD75-2E39-4869-9803-A37042D8A8C7}
 		{5F875EC3-CC4E-4A6E-996F-AC52D3DC9BFA} = {DE51109D-CCB8-437A-9185-B19792753A9E}
+		{1BC55AA7-519D-45BC-B100-B3D9258E1123} = {128C3CB4-5D2C-4977-AEC2-17E51B26BB56}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9122AFEF-CD33-4268-99C9-F31B4B100B0D}
