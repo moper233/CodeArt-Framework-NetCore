@@ -87,7 +87,7 @@ namespace CodeArt.DomainDriven
         /// <summary>
         /// 全局配置信息
         /// </summary>
-        internal static readonly DomainDrivenConfiguration Current;
+        public static readonly DomainDrivenConfiguration Current;
 
         static DomainDrivenConfiguration()
         {

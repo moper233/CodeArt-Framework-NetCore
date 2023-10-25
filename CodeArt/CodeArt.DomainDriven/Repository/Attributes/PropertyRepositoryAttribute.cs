@@ -27,7 +27,7 @@ namespace CodeArt.DomainDriven
             {
                 return _property;
             }
-            internal set
+            set
             {
                 _property = value;
                 InitPropertyType(value);
@@ -61,7 +61,7 @@ namespace CodeArt.DomainDriven
         }
 
 
-        internal DomainPropertyType DomainPropertyType
+        public DomainPropertyType DomainPropertyType
         {
             get
             {
@@ -171,19 +171,19 @@ namespace CodeArt.DomainDriven
             }
         }
 
-        internal ConstructorInfo EmptyableConstructor
+        public ConstructorInfo EmptyableConstructor
         {
             get;
             private set;
         }
 
-        internal MethodInfo CreateDefaultEmptyable
+        public MethodInfo CreateDefaultEmptyable
         {
             get;
             private set;
         }
 
-        internal Type EmptyableValueType
+        public Type EmptyableValueType
         {
             get;
             private set;

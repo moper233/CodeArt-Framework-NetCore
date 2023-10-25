@@ -67,7 +67,7 @@ namespace CodeArt.DomainDriven
             _lockedMirrors = false;
         }
 
-        internal void AddMirror(IAggregateRoot obj)
+        public void AddMirror(IAggregateRoot obj)
         {
             if (IsCommiting)
                 throw new DataContextException(Strings.CanNotAddMirror);
@@ -113,7 +113,7 @@ namespace CodeArt.DomainDriven
             _buffer.Clear();
         }
 
-        internal void AddBuffer(IAggregateRoot obj)
+        public void AddBuffer(IAggregateRoot obj)
         {
             if (_buffer.Exists((t) => { return t.UniqueKey == obj.UniqueKey; })) return;
             _buffer.Add(obj);

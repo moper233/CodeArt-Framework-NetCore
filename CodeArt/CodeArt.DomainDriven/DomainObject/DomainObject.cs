@@ -895,22 +895,22 @@ namespace CodeArt.DomainDriven
         internal readonly static Type DomainObjectType = typeof(IDomainObject);
         internal readonly static Type DynamicObjectType = typeof(IDynamicObject);
 
-        internal static bool IsDomainObject(Type type)
+        public static bool IsDomainObject(Type type)
         {
             return type.IsImplementOrEquals(DomainObjectType);
         }
 
-        internal static bool IsValueObject(Type type)
+        public static bool IsValueObject(Type type)
         {
             return type.IsImplementOrEquals(ValueObjectType);
         }
 
-        internal static bool IsAggregateRoot(Type type)
+        public static bool IsAggregateRoot(Type type)
         {
             return type.IsImplementOrEquals(AggregateRootType);
         }
 
-        internal static bool IsEntityObject(Type type)
+        public static bool IsEntityObject(Type type)
         {
             return type.IsImplementOrEquals(EntityObjectType);
         }
@@ -983,7 +983,7 @@ namespace CodeArt.DomainDriven
         /// </summary>
         /// <param name="objectType"></param>
         /// <returns></returns>
-        internal static object GetEmpty(Type objectType)
+        public static object GetEmpty(Type objectType)
         {
             var runtimeType = objectType as RuntimeObjectType;
             if (runtimeType != null) return runtimeType.Define.EmptyInstance;
@@ -1091,7 +1091,7 @@ namespace CodeArt.DomainDriven
         /// <para>初始化与领域对象相关的行为，由于许多行为是第一次使用对象的时候才触发，这样会导致没有使用对象却需要一些额外特性的时候缺少数据</para>
         /// <para>所以我们需要在使用领域驱动的之前执行初始化操作</para>
         /// </summary>
-        internal static void Initialize()
+        public static void Initialize()
         {
             if (_initialized) return;
             _initialized = true;
@@ -1131,12 +1131,12 @@ namespace CodeArt.DomainDriven
         /// <summary>
         /// 初始化之后
         /// </summary>
-        internal static void Initialized()
+        public static void Initialized()
         {
             EventHost.Initialized();
         }
 
-        internal static void Cleanup()
+        public static void Cleanup()
         {
             RemoteService.Cleanup();
 
@@ -1146,7 +1146,7 @@ namespace CodeArt.DomainDriven
         /// <summary>
         /// 检查领域对象是否已被初始化了
         /// </summary>
-        internal static void CheckInitialized()
+        public static void CheckInitialized()
         {
             if (!_initialized)
             {

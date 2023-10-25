@@ -46,7 +46,7 @@ namespace CodeArt.DomainDriven
             private set;
         }
 
-        internal TypeMetadata Metadata
+        public TypeMetadata Metadata
         {
             get;
             private set;
@@ -56,13 +56,13 @@ namespace CodeArt.DomainDriven
         /// <summary>
         /// 类型定义对应的实例类型（也就是真正需要创建的、实际存在内存中的对象类型）
         /// </summary>
-        internal Type ObjectType
+        public Type ObjectType
         {
             get;
             private set;
         }
 
-        internal ConstructorInfo Constructor
+        public ConstructorInfo Constructor
         {
             get;
             private set;
@@ -72,7 +72,7 @@ namespace CodeArt.DomainDriven
         /// <summary>
         /// 元数据类型，记录了对象拥有的领域属性等数据
         /// </summary>
-        internal Type MetadataType
+        public Type MetadataType
         {
             get;
             private set;

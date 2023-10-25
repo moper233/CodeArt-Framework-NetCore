@@ -20,7 +20,7 @@ namespace CodeArt.DomainDriven
 
         private ConstructorInfo _constructor;
 
-        internal ConstructorInfo Constructor
+        public ConstructorInfo Constructor
         {
             get
             {
@@ -80,14 +80,16 @@ namespace CodeArt.DomainDriven
             }
             this.Parameters = prms;
         }
-
-        internal IEnumerable<ConstructorParameterInfo> Parameters
+        
+        //todo
+        public IEnumerable<ConstructorParameterInfo> Parameters
         {
             get;
-            private set;
+            set;
         }
 
-        internal sealed class ConstructorParameterInfo
+
+        public sealed class ConstructorParameterInfo
         {
             public ParameterInfo Original
             {

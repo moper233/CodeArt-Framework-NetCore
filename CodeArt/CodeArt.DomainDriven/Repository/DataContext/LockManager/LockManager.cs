@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CodeArt.DomainDriven
 {
-    internal static class LockManager
+    public static class LockManager
     {
         public static void Lock(IEnumerable<IAggregateRoot> roots)
         {

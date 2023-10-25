@@ -268,7 +268,7 @@ namespace CodeArt.DomainDriven
 
         #region 属性仓储的定义
 
-        internal PropertyRepositoryAttribute RepositoryTip
+        public PropertyRepositoryAttribute RepositoryTip
         {
             get;
             private set;
@@ -295,7 +295,7 @@ namespace CodeArt.DomainDriven
         /// </summary>
         /// <param name="doType"></param>
         /// <returns></returns>
-        internal static IEnumerable<DomainProperty> GetProperties(Type doType)
+        public static IEnumerable<DomainProperty> GetProperties(Type doType)
         {
             //使用_getProperties方法，而不是直接使用_properties对象
             //是因为_properties记录的是对象类型Type上注册了哪些属性
@@ -304,7 +304,7 @@ namespace CodeArt.DomainDriven
             return _getProperties(doType);
         }
 
-        internal static IEnumerable<DomainProperty> GetProperties<TObject>()
+        public static IEnumerable<DomainProperty> GetProperties<TObject>()
         {
             return GetProperties(typeof(TObject));
         }
@@ -334,7 +334,7 @@ namespace CodeArt.DomainDriven
         });
 
 
-        internal static DomainProperty GetProperty(Type doType, string propertyName)
+        public static DomainProperty GetProperty(Type doType, string propertyName)
         {
             return _getPropertyByName(doType)(propertyName);
         }
@@ -652,7 +652,7 @@ namespace CodeArt.DomainDriven
 
         #region 辅助方法
 
-        internal T GetAttribute<T>() where T : Attribute
+        public T GetAttribute<T>() where T : Attribute
         {
             return GetAttribute<T>(this.OwnerType, this.Name);
         }
@@ -768,7 +768,7 @@ namespace CodeArt.DomainDriven
     }
 
 
-    internal enum DomainPropertyType
+    public enum DomainPropertyType
     {
         /// <summary>
         /// 基元类型

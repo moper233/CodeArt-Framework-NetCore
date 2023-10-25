@@ -11,7 +11,7 @@ namespace CodeArt.DomainDriven
     /// <summary>
     /// 元数据类型，记录了对象拥有的领域属性等数据
     /// </summary>
-    internal class RuntimeObjectType : RuntimeType
+    public class RuntimeObjectType : RuntimeType
     {
         /// <summary>
         /// 类型定义对应的实例类型（也就是真正需要构建的对象类型）

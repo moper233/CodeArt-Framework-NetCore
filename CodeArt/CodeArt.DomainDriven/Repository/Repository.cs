@@ -52,7 +52,7 @@ namespace CodeArt.DomainDriven
         /// </summary>
         /// <param name="objectType"></param>
         /// <returns></returns>
-        internal static IRepository CreateWithNoCheckUp(Type objectType)
+        public static IRepository CreateWithNoCheckUp(Type objectType)
         {
             var objectTip = ObjectRepositoryAttribute.GetTip(objectType, false);
             if (objectTip == null) return null;

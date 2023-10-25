@@ -12,7 +12,7 @@ namespace CodeArt.DomainDriven
     /// <summary>
     /// 领域缓冲池，用于缓冲领域对象
     /// </summary>
-    internal class DomainBuffer : IDisposable
+    public class DomainBuffer : IDisposable
     {
         private IDomainBuffer _buffer;
 

@@ -21,11 +21,11 @@ namespace CodeArt.DomainDriven
             Code = code;
         }
 
-        internal const int NoneCode = 1;
-        internal const int ShareCode = 2;
-        internal const int SingleCode = 3;
-        internal const int HoldSingleCode = 4;
-        internal const int MirroringCode = 5;
+        public const int NoneCode = 1;
+        public const int ShareCode = 2;
+        public const int SingleCode = 3;
+        public const int HoldSingleCode = 4;
+        public const int MirroringCode = 5;
 
         /// <summary>
         /// ÎÞËø
