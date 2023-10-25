@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CodeArt.DomainDriven.DataAccess\CodeArt.DomainDriven.DataAccess.csproj" />
+    <ProjectReference Include="..\CodeArt.DomainDriven\CodeArt.DomainDriven.csproj" />
+    <ProjectReference Include="..\CodeArt.EasyMQ\CodeArt.EasyMQ.csproj" />
+    <ProjectReference Include="..\CodeArt\CodeArt.csproj" />
+  </ItemGroup>
+
+</Project>

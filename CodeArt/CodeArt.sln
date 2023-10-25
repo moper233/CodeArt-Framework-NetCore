@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EasyMQ", "EasyMQ", "{DE5110
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeArt.DomainDriven.DataAccess", "CodeArt.DomainDriven.DataAccess\CodeArt.DomainDriven.DataAccess.csproj", "{D3889D8D-675C-4DE9-8360-7A57A5A7018A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeArt.DomainDriven.Extensions", "CodeArt.DomainDriven.Extensions\CodeArt.DomainDriven.Extensions.csproj", "{F79D95A2-C06A-4EAB-8A94-A4A37CE7C8CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{D3889D8D-675C-4DE9-8360-7A57A5A7018A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3889D8D-675C-4DE9-8360-7A57A5A7018A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3889D8D-675C-4DE9-8360-7A57A5A7018A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F79D95A2-C06A-4EAB-8A94-A4A37CE7C8CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F79D95A2-C06A-4EAB-8A94-A4A37CE7C8CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F79D95A2-C06A-4EAB-8A94-A4A37CE7C8CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F79D95A2-C06A-4EAB-8A94-A4A37CE7C8CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +54,7 @@ Global
 		{07C8604D-F115-437F-B0A7-15202B9AD52C} = {CC6DBD75-2E39-4869-9803-A37042D8A8C7}
 		{BE760E01-93BC-40A0-80A4-584B539E9E33} = {DE51109D-CCB8-437A-9185-B19792753A9E}
 		{D3889D8D-675C-4DE9-8360-7A57A5A7018A} = {CC6DBD75-2E39-4869-9803-A37042D8A8C7}
+		{F79D95A2-C06A-4EAB-8A94-A4A37CE7C8CE} = {CC6DBD75-2E39-4869-9803-A37042D8A8C7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9122AFEF-CD33-4268-99C9-F31B4B100B0D}
