@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeArt.DomainDriven.DataAc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeArt.DomainDriven.Extensions", "CodeArt.DomainDriven.Extensions\CodeArt.DomainDriven.Extensions.csproj", "{F79D95A2-C06A-4EAB-8A94-A4A37CE7C8CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeArt.RabbitMQ", "CodeArt.RabbitMQ\CodeArt.RabbitMQ.csproj", "{5F875EC3-CC4E-4A6E-996F-AC52D3DC9BFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{F79D95A2-C06A-4EAB-8A94-A4A37CE7C8CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F79D95A2-C06A-4EAB-8A94-A4A37CE7C8CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F79D95A2-C06A-4EAB-8A94-A4A37CE7C8CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F875EC3-CC4E-4A6E-996F-AC52D3DC9BFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F875EC3-CC4E-4A6E-996F-AC52D3DC9BFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F875EC3-CC4E-4A6E-996F-AC52D3DC9BFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F875EC3-CC4E-4A6E-996F-AC52D3DC9BFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{BE760E01-93BC-40A0-80A4-584B539E9E33} = {DE51109D-CCB8-437A-9185-B19792753A9E}
 		{D3889D8D-675C-4DE9-8360-7A57A5A7018A} = {CC6DBD75-2E39-4869-9803-A37042D8A8C7}
 		{F79D95A2-C06A-4EAB-8A94-A4A37CE7C8CE} = {CC6DBD75-2E39-4869-9803-A37042D8A8C7}
+		{5F875EC3-CC4E-4A6E-996F-AC52D3DC9BFA} = {DE51109D-CCB8-437A-9185-B19792753A9E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9122AFEF-CD33-4268-99C9-F31B4B100B0D}
