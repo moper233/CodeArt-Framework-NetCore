@@ -25,7 +25,7 @@ namespace CodeArt.ServiceModel
         }
 
 
-        public static void Start(Action initialize = null)
+        public static void Start(Action initialize = null, bool autoClose = true)
         {
             IsEnabled = false;
 
@@ -40,14 +40,26 @@ namespace CodeArt.ServiceModel
 
             AppInitializer.Initialized();
 
-            Console.WriteLine(MQ.Strings.CloseServiceHost);
+            if (autoClose) Console.WriteLine(MQ.Strings.CloseServiceHost);
 
             IsEnabled = true;
-            Console.ReadLine();
+
+            if (autoClose)
+            {
+                Console.ReadLine();
+                Stop();
+            }
+        }
 
 
+        public static void StartOnly(Action initialize = null)
+        {
+            Start(initialize, false);
+        }
+
+        public static void Stop()
+        {
             AppInitializer.Cleanup();
-
             IsEnabled = false;
         }
 

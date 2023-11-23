@@ -3,6 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CodeArt.Web
 {
+    public class RequestBody
+    {
+        public string Arg { get; set; }
+    }
+
     [ApiController]
     [Route("Api/[controller]")]
     public abstract class Procedure : ControllerBase
@@ -18,22 +23,31 @@ namespace CodeArt.Web
             return DTObject.Empty;
         }
 
-        //[HttpGet]
-        //public string Get(string arg)
-        //{
-        //    var data = DTObject.Create(arg);
-        //    var result = this.InvokeDynamic(data);
-        //    return result.GetCode(false, false);
-        //}
 
-
+        /// <summary>
+        /// post请求
+        /// </summary>
+        /// <param name="model">使用boby读取参数方式</param>
+        /// <returns></returns>
         [HttpPost]
-        public string Post(string arg)
+        public string Post([FromBody] RequestBody? model = null)
         {
-            var data = DTObject.Create(arg);
+            var data = DTObject.Create(model?.Arg ?? "{}");
             var result = InvokeDynamic(data);
             return result.GetCode(false, false);
         }
+
+        //[HttpGet]
+        //public string Get([FromBody] RequestBody? model = null)
+        //{
+        //    return string.Empty;
+        //}
+
+        //[HttpOptions]
+        //public string Options([FromBody] RequestBody? model = null)
+        //{
+        //    return string.Empty;
+        //}
     }
 
 
