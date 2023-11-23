@@ -1338,7 +1338,20 @@ namespace CodeArt.DTO
         public static DTObject Create(string code)
         {
             if (string.IsNullOrEmpty(code)) return DTObject.Create();
+            code = TryPatch(code);
             return CreateComplete(code, false);
+        }
+
+        /// <summary>
+        /// 尝试补丁，如果是数组，那么补丁成对象 moper
+        /// </summary>
+        /// <param name="code"></param>
+        /// <returns></returns>
+        public static string TryPatch(string code)
+        {
+            var isArray = code.StartsWith("[");
+            if (isArray) code = $"{{\"rows\":{code}}}";
+            return code;
         }
 
         /// <summary>
@@ -1632,6 +1645,17 @@ namespace CodeArt.DTO
         public static DTObject Serialize(object obj)
         {
             return DTObjectSerializer.Instance.Serialize(obj);
+        }
+
+        /// <summary>
+        /// 利用SerializeObject转换DTO moper
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public static DTObject SerializePro(object obj)
+        {
+            var json = JsonConvert.SerializeObject(obj);
+            return Create(json);
         }
 
         #endregion
