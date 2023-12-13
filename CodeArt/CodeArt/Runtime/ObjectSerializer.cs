@@ -28,7 +28,7 @@ namespace CodeArt.Runtime
                 //    return formatter.Deserialize(buffer);
                 //}
 
-
+#pragma warning disable SYSLIB0011 // 类型或成员已过时
                 var bf = new BinaryFormatter();
                 using (var ms = new MemoryStream())
                 {

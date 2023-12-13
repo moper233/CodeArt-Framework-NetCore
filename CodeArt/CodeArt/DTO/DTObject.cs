@@ -1349,8 +1349,14 @@ namespace CodeArt.DTO
         /// <returns></returns>
         public static string TryPatch(string code)
         {
-            var isArray = code.StartsWith("[");
-            if (isArray) code = $"{{\"rows\":{code}}}";
+            int indexObject = code.IndexOf('{');
+            int indexArray = code.IndexOf('[');
+
+            if (indexArray < indexObject)
+            {
+                return $"{{\"rows\":{code}}}"; ;
+            }
+
             return code;
         }
 
@@ -1654,10 +1660,69 @@ namespace CodeArt.DTO
         /// <returns></returns>
         public static DTObject SerializePro(object obj)
         {
-            var json = JsonConvert.SerializeObject(obj);
-            return Create(json);
+            try
+            {
+                var json = JsonConvert.SerializeObject(obj);
+                return Create(json);
+            }
+            catch
+            {
+                return DTObject.Empty;
+            }
         }
 
+        /// <summary>
+        /// 利用SerializeObject转换DTO moper
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public static DTObject SerializeExcel(dynamic obj)
+        {
+            try
+            {
+                var json = SheetToJson(obj);
+                return Create(json);
+            }
+            catch (Exception ex)
+            {
+                return DTObject.Empty;
+            }
+        }
+
+        /// <summary>
+        /// Excel转换成Json，第一行为表头，第二行开始为数据，如果有合并单元格，合并单元格的值为合并单元格的第一个单元格的值
+        /// </summary>
+        /// <param name="ws"></param>
+        /// <returns></returns>
+        public static string SheetToJson(dynamic ws)
+        {
+            var start = ws.Dimension.Start;
+            var end = ws.Dimension.End;
+
+            var data = new List<Dictionary<string, object>>();
+            for (int row = start.Row + 1; row <= end.Row; row++)
+            {
+                var rowData = new Dictionary<string, object>();
+                for (int col = start.Column; col <= end.Column; col++)
+                {
+                    var cell = ws.Cells[row, col];
+                    var value = cell.Text;
+
+                    if (cell.Merge)
+                    {
+                        var range = ws.MergedCells[row, col];
+                        var ranges = ws.Cells[range] as IEnumerable<dynamic>;
+                        value = ranges.First().Text; ;
+                    }
+
+                    var name = ws.Cells[1, col].Text;
+                    if (!string.IsNullOrEmpty(name)) rowData[name] = value;
+                }
+                data.Add(rowData);
+            }
+            var json = JsonConvert.SerializeObject(data);
+            return json;
+        }
         #endregion
 
         #region 类型解析
